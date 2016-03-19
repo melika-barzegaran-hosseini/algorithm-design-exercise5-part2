@@ -86,7 +86,6 @@ public class Problem2
                         {
                             if(Integer.parseInt(tokens[0]) != (i + 1))
                             {
-                                System.out.println(Integer.parseInt(tokens[0]));
                                 throw new NumberFormatException();
                             }
 
@@ -173,7 +172,7 @@ public class Problem2
             lis[i] = 1;
 
         //filling the lis array in a bottom up manner
-        //using the recursive relation solve(i) = 1 + max{solve(j)} where i > j and input[i] > input[j]
+        //using the recursive relation solve(i) = 1 + max{solve(j)} where i > j and input[i] >= input[j]
         //and if there is no such j then solve(i) = 1
         for(int i = 0; i < n; i++)
             for(int j = 0; j < i; j++)

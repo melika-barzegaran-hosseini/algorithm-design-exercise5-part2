@@ -12,7 +12,6 @@ public class Problem2
 {
     private String path;
     private boolean detailedPrinting;
-    private Float[] input;
 
     public Problem2(String path)
     {
@@ -30,7 +29,7 @@ public class Problem2
         detailedPrinting = false;
     }
 
-    private Float[] read()
+    private Float[] read(String path)
     {
         if(path == null || path.isEmpty())
         {
@@ -39,6 +38,7 @@ public class Problem2
         }
 
         BufferedReader reader = null;
+        Float[] input = null;
         try
         {
             reader = new BufferedReader(new FileReader(path));
@@ -70,7 +70,7 @@ public class Problem2
 
             if(detailedPrinting)
             {
-                System.out.println("the amount of data provided: " + n);
+                System.out.println("the amount of data provided = " + n);
             }
 
             input = new Float[n];
@@ -116,7 +116,7 @@ public class Problem2
 
             if(detailedPrinting)
             {
-                StringBuilder log = new StringBuilder("the sequence:");
+                StringBuilder log = new StringBuilder("the sequence = ");
                 for(Float value : input)
                 {
                     log.append(value).append(", ");
@@ -159,9 +159,17 @@ public class Problem2
         return input;
     }
 
+    private Integer solve(Float[] input)
+    {
+
+        return null;
+    }
+
     public void solve()
     {
-        input = read();
+        Float[] input = read(path);
+        Integer output = solve(input);
+        System.out.println("the output = " + output);
     }
 
     public static void main(String args[])
